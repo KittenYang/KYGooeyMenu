@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F5DCADE1AE9441F00CA8491 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCADD1AE9441F00CA8491 /* main.m */; };
+		5F5DCAE11AE9441F00CA8491 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE01AE9441F00CA8491 /* AppDelegate.m */; };
+		5F5DCAE41AE9441F00CA8491 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE31AE9441F00CA8491 /* ViewController.m */; };
+		5F5DCAE71AE9442000CA8491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE51AE9442000CA8491 /* Main.storyboard */; };
+		5F5DCAE91AE9442000CA8491 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE81AE9442000CA8491 /* Images.xcassets */; };
+		5F5DCAEC1AE9442000CA8491 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAEA1AE9442000CA8491 /* LaunchScreen.xib */; };
+		5F5DCAF81AE9442100CA8491 /* KYGooeyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */; };
+		5F5DCB031AE944B000CA8491 /* KYGooeyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F5DCAF21AE9442100CA8491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F5DCAD01AE9441F00CA8491 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F5DCAD71AE9441F00CA8491;
+			remoteInfo = KYGooeyMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F5DCAD81AE9441F00CA8491 /* KYGooeyMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYGooeyMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5DCADC1AE9441F00CA8491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5DCADD1AE9441F00CA8491 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F5DCADF1AE9441F00CA8491 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5F5DCAE01AE9441F00CA8491 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5F5DCAE21AE9441F00CA8491 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5F5DCAE31AE9441F00CA8491 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5F5DCAE61AE9442000CA8491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F5DCAE81AE9442000CA8491 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5F5DCAEB1AE9442000CA8491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5F5DCAF11AE9442100CA8491 /* KYGooeyMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYGooeyMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5DCAF61AE9442100CA8491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenuTests.m; sourceTree = "<group>"; };
+		5F5DCB011AE944B000CA8491 /* KYGooeyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGooeyMenu.h; sourceTree = "<group>"; };
+		5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenu.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F5DCAD51AE9441F00CA8491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5DCAEE1AE9442100CA8491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F5DCACF1AE9441F00CA8491 = {
+			isa = PBXGroup;
+			children = (
+				5F5DCADA1AE9441F00CA8491 /* KYGooeyMenu */,
+				5F5DCAF41AE9442100CA8491 /* KYGooeyMenuTests */,
+				5F5DCAD91AE9441F00CA8491 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F5DCAD91AE9441F00CA8491 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DCAD81AE9441F00CA8491 /* KYGooeyMenu.app */,
+				5F5DCAF11AE9442100CA8491 /* KYGooeyMenuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F5DCADA1AE9441F00CA8491 /* KYGooeyMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DCADF1AE9441F00CA8491 /* AppDelegate.h */,
+				5F5DCAE01AE9441F00CA8491 /* AppDelegate.m */,
+				5F5DCAE21AE9441F00CA8491 /* ViewController.h */,
+				5F5DCAE31AE9441F00CA8491 /* ViewController.m */,
+				5F5DCB041AE944B400CA8491 /* Classes */,
+				5F5DCAE51AE9442000CA8491 /* Main.storyboard */,
+				5F5DCAE81AE9442000CA8491 /* Images.xcassets */,
+				5F5DCAEA1AE9442000CA8491 /* LaunchScreen.xib */,
+				5F5DCADB1AE9441F00CA8491 /* Supporting Files */,
+			);
+			path = KYGooeyMenu;
+			sourceTree = "<group>";
+		};
+		5F5DCADB1AE9441F00CA8491 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DCADC1AE9441F00CA8491 /* Info.plist */,
+				5F5DCADD1AE9441F00CA8491 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F5DCAF41AE9442100CA8491 /* KYGooeyMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */,
+				5F5DCAF51AE9442100CA8491 /* Supporting Files */,
+			);
+			path = KYGooeyMenuTests;
+			sourceTree = "<group>";
+		};
+		5F5DCAF51AE9442100CA8491 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DCAF61AE9442100CA8491 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F5DCB041AE944B400CA8491 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DCB011AE944B000CA8491 /* KYGooeyMenu.h */,
+				5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F5DCAD71AE9441F00CA8491 /* KYGooeyMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5DCAFB1AE9442100CA8491 /* Build configuration list for PBXNativeTarget "KYGooeyMenu" */;
+			buildPhases = (
+				5F5DCAD41AE9441F00CA8491 /* Sources */,
+				5F5DCAD51AE9441F00CA8491 /* Frameworks */,
+				5F5DCAD61AE9441F00CA8491 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYGooeyMenu;
+			productName = KYGooeyMenu;
+			productReference = 5F5DCAD81AE9441F00CA8491 /* KYGooeyMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F5DCAF01AE9442100CA8491 /* KYGooeyMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5DCAFE1AE9442100CA8491 /* Build configuration list for PBXNativeTarget "KYGooeyMenuTests" */;
+			buildPhases = (
+				5F5DCAED1AE9442100CA8491 /* Sources */,
+				5F5DCAEE1AE9442100CA8491 /* Frameworks */,
+				5F5DCAEF1AE9442100CA8491 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F5DCAF31AE9442100CA8491 /* PBXTargetDependency */,
+			);
+			name = KYGooeyMenuTests;
+			productName = KYGooeyMenuTests;
+			productReference = 5F5DCAF11AE9442100CA8491 /* KYGooeyMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F5DCAD01AE9441F00CA8491 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Kitten Yang";
+				TargetAttributes = {
+					5F5DCAD71AE9441F00CA8491 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					5F5DCAF01AE9442100CA8491 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 5F5DCAD71AE9441F00CA8491;
+					};
+				};
+			};
+			buildConfigurationList = 5F5DCAD31AE9441F00CA8491 /* Build configuration list for PBXProject "KYGooeyMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F5DCACF1AE9441F00CA8491;
+			productRefGroup = 5F5DCAD91AE9441F00CA8491 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F5DCAD71AE9441F00CA8491 /* KYGooeyMenu */,
+				5F5DCAF01AE9442100CA8491 /* KYGooeyMenuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F5DCAD61AE9441F00CA8491 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5DCAE71AE9442000CA8491 /* Main.storyboard in Resources */,
+				5F5DCAEC1AE9442000CA8491 /* LaunchScreen.xib in Resources */,
+				5F5DCAE91AE9442000CA8491 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5DCAEF1AE9442100CA8491 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F5DCAD41AE9441F00CA8491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5DCB031AE944B000CA8491 /* KYGooeyMenu.m in Sources */,
+				5F5DCAE41AE9441F00CA8491 /* ViewController.m in Sources */,
+				5F5DCAE11AE9441F00CA8491 /* AppDelegate.m in Sources */,
+				5F5DCADE1AE9441F00CA8491 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5DCAED1AE9442100CA8491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5DCAF81AE9442100CA8491 /* KYGooeyMenuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F5DCAF31AE9442100CA8491 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F5DCAD71AE9441F00CA8491 /* KYGooeyMenu */;
+			targetProxy = 5F5DCAF21AE9442100CA8491 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F5DCAE51AE9442000CA8491 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F5DCAE61AE9442000CA8491 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F5DCAEA1AE9442000CA8491 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F5DCAEB1AE9442000CA8491 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F5DCAF91AE9442100CA8491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F5DCAFA1AE9442100CA8491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F5DCAFC1AE9442100CA8491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: qitao yang (B2HSA2SE73)";
+				INFOPLIST_FILE = KYGooeyMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5F5DCAFD1AE9442100CA8491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KYGooeyMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5F5DCAFF1AE9442100CA8491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KYGooeyMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KYGooeyMenu.app/KYGooeyMenu";
+			};
+			name = Debug;
+		};
+		5F5DCB001AE9442100CA8491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KYGooeyMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KYGooeyMenu.app/KYGooeyMenu";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F5DCAD31AE9441F00CA8491 /* Build configuration list for PBXProject "KYGooeyMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5DCAF91AE9442100CA8491 /* Debug */,
+				5F5DCAFA1AE9442100CA8491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5DCAFB1AE9442100CA8491 /* Build configuration list for PBXNativeTarget "KYGooeyMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5DCAFC1AE9442100CA8491 /* Debug */,
+				5F5DCAFD1AE9442100CA8491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5F5DCAFE1AE9442100CA8491 /* Build configuration list for PBXNativeTarget "KYGooeyMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5DCAFF1AE9442100CA8491 /* Debug */,
+				5F5DCB001AE9442100CA8491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F5DCAD01AE9441F00CA8491 /* Project object */;
+}
