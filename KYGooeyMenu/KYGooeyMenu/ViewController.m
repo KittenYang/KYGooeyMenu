@@ -11,16 +11,32 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *min;
+@property (strong, nonatomic) IBOutlet UILabel *current;
+@property (strong, nonatomic) IBOutlet UISlider *slider;
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    KYGooeyMenu *gooeyMenu;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    KYGooeyMenu *gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:self.view.center andDiameter:100.0f andMenuCount:4 andDelegate:self themeColor:[UIColor redColor]];
-    [gooeyMenu setUp];
+    self.min.text = [NSString stringWithFormat:@"%d",(int)self.slider.minimumValue] ;
+    [self.slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+
+    gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:100.0f andDelegate:self themeColor:[UIColor redColor]];
+    gooeyMenu.MenuCount = 4;
     
 }
+
+- (void)sliderValueChanged:(UISlider *)sender {
+    self.current.text = [NSString stringWithFormat:@"%d",(int)sender.value];
+
+    gooeyMenu.MenuCount = (int)sender.value;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

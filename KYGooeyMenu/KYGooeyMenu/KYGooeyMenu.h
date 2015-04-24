@@ -10,10 +10,9 @@
 
 @interface KYGooeyMenu : UIView
 
-//@property(nonatomic,strong)UIColor *themeColor;
+@property(nonatomic,assign)NSInteger MenuCount;
 
+-(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor;
 
--(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andMenuCount:(NSInteger)count andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor;
--(void)setUp;
 
 @end

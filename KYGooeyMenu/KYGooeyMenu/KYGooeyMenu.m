@@ -7,7 +7,7 @@
 //
 
 #import "KYGooeyMenu.h"
-
+#import "Cross.h"
 
 @interface KYGooeyMenu()
 
@@ -32,43 +32,66 @@
     BOOL isOpened;
     BOOL dLargerThanDis;
     CAShapeLayer *verticalLineLayer;
+    
+    NSArray *values1_0_right;
+    NSArray *values1_0_left;
+    NSArray *values0_1_left;
+    NSArray *values0_1_right;
+    
+    Cross *cross;
+    
+    BOOL once;
 }
 
 
 
--(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andMenuCount:(NSInteger)count andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor{
+-(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor{
     menuFrame = CGRectMake(origin.x, origin.y, diameter, diameter);
     self = [super initWithFrame:menuFrame];
 
     
     if (self) {
         PointsDic = [NSMutableDictionary dictionary];
-        Menus = [NSMutableArray arrayWithCapacity:count];
-        MenuLayers = [NSMutableArray arrayWithCapacity:count];
-        menuCount = count;
         menuColor = themeColor;
         isOpened = NO;
         self.containerView = controller.view;
         [self.containerView addSubview:self];
-        self.animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.mainView];
-
+        once = NO;
+        [self addSomeViews];
+        
     }
     
     return self;
 }
 
+-(void)setMenuCount:(NSInteger)MenuCount{
+    Menus = [NSMutableArray arrayWithCapacity:MenuCount];
+    MenuLayers = [NSMutableArray arrayWithCapacity:MenuCount];
+    menuCount = MenuCount;
+    once = NO;
+}
 
-
--(void)setUp{
-    
+-(void)addSomeViews{
     self.mainView = [[UIView alloc]initWithFrame:menuFrame];
     self.mainView.backgroundColor = menuColor;
     self.mainView.layer.cornerRadius = self.mainView.bounds.size.width / 2;
     self.mainView.layer.masksToBounds = YES;
     [self.containerView addSubview:self.mainView];
+    
+    //初始化加号
+    cross = [[Cross alloc]init];
+    cross.center = CGPointMake(self.mainView.bounds.size.width/2, self.mainView.bounds.size.height/2);
+    cross.bounds = CGRectMake(0, 0, menuFrame.size.width/2, menuFrame.size.width/2);
+    cross.backgroundColor = [UIColor clearColor];
+    [self.mainView addSubview:cross];
+    
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapToOpenUp)];
     [self.mainView addGestureRecognizer:tapGes];
-    
+
+}
+
+-(void)setUpSomeDatas{
+
     
     //-----------计算目标点的位置----------
     R = self.mainView.bounds.size.width / 2;
@@ -106,22 +129,73 @@
         [MenuLayers addObject:shapeLayer];
     
     }
+    
+    
+    //配置关键帧的value
+    CGFloat positionX = 50.0f;
+    values1_0_right = @[
+                        (id) [self getRightLinePathWithAmount:(positionX * 0.6)],
+                        (id) [self getRightLinePathWithAmount:-(positionX * 0.4)],
+                        (id) [self getRightLinePathWithAmount:(positionX * 0.25)],
+                        (id) [self getRightLinePathWithAmount:-(positionX * 0.15)],
+                        (id) [self getRightLinePathWithAmount:(positionX * 0.05)],
+                        (id) [self getRightLinePathWithAmount:0.0]
+                        ];
+    values1_0_left = @[
+                       (id) [self getLeftLinePathWithAmount:(positionX * 0.35)],
+                       (id) [self getLeftLinePathWithAmount:-(positionX * 0.15)],
+                       (id) [self getLeftLinePathWithAmount:(positionX * 0.15)],
+                       (id) [self getLeftLinePathWithAmount:-(positionX * 0.05)],
+                       (id) [self getLeftLinePathWithAmount:0.0]
+                       ];
+    
+    values0_1_right = @[
+                        (id) [self getRightLinePathWithAmount:0.0],
+                        (id) [self getRightLinePathWithAmount:(positionX * 0.15)],
+                        (id) [self getRightLinePathWithAmount:-(positionX * 0.35)],
+                        (id) [self getRightLinePathWithAmount:(positionX * 0.6)],
+                        (id) [self getRightLinePathWithAmount:-(positionX * 0.35)],
+                        (id) [self getRightLinePathWithAmount:(positionX * 0.15)],
+                        (id) [self getRightLinePathWithAmount:0.0]
+                        ];
+    
+    values0_1_left = @[
+                       (id) [self getLeftLinePathWithAmount:0.0],
+                       (id) [self getLeftLinePathWithAmount:-(positionX * 0.15)],
+                       (id) [self getLeftLinePathWithAmount:(positionX * 0.35)],
+                       (id) [self getLeftLinePathWithAmount:-(positionX * 0.15)],
+                       (id) [self getLeftLinePathWithAmount:0.0]
+                       ];
+
 
 }
 
+
+
 - (CGPathRef) getRightLinePathWithAmount:(CGFloat)amount {
+    UIBezierPath *verticalLine = [UIBezierPath bezierPath];
+    CGPoint pointB = CGPointMake(self.mainView.center.x, self.mainView.center.y - self.mainView.bounds.size.height/2);
+    CGPoint pointC = CGPointMake(self.mainView.center.x + self.mainView.bounds.size.width/2, self.mainView.center.y);
+    CGPoint pointP = CGPointMake(self.mainView.frame.origin.x + self.mainView.bounds.size.width + amount * cosf(45 *(M_PI/180)),self.mainView.frame.origin.y - amount * cosf(45 *(M_PI/180)));
+    
+    [verticalLine moveToPoint:pointC];
+    [verticalLine addQuadCurveToPoint:pointB controlPoint:pointP];
+    [verticalLine addArcWithCenter:self.mainView.center radius:R startAngle:M_PI_2 endAngle:M_PI clockwise:NO];
+    [verticalLine addArcWithCenter:self.mainView.center radius:R startAngle:M_PI endAngle:2*M_PI clockwise:NO];
+    
+    return [verticalLine CGPath];
+}
+
+- (CGPathRef) getLeftLinePathWithAmount:(CGFloat)amount {
     UIBezierPath *verticalLine = [UIBezierPath bezierPath];
     CGPoint pointA = CGPointMake(self.mainView.center.x - self.mainView.bounds.size.width/2, self.mainView.center.y) ;
     CGPoint pointB = CGPointMake(self.mainView.center.x, self.mainView.center.y - self.mainView.bounds.size.height/2);
-    CGPoint pointC = CGPointMake(self.mainView.center.x + self.mainView.bounds.size.width/2, self.mainView.center.y);
-    CGPoint pointD = CGPointMake(self.mainView.center.x, self.mainView.center.y + self.mainView.bounds.size.height/2);
     CGPoint pointO = CGPointMake(self.mainView.frame.origin.x - amount * cosf(45 *(M_PI/180)), self.mainView.frame.origin.y - amount * cosf(45 *(M_PI/180)));
-    CGPoint pointP = CGPointMake(self.mainView.frame.origin.x + self.mainView.bounds.size.width + amount * cosf(45 *(M_PI/180)),self.mainView.frame.origin.y - amount * cosf(45 *(M_PI/180)));
 
-    [verticalLine moveToPoint:pointA];
-    [verticalLine addQuadCurveToPoint:pointB controlPoint:pointO];
-    [verticalLine addQuadCurveToPoint:pointC controlPoint:pointP];
+    [verticalLine moveToPoint:pointB];
+    [verticalLine addQuadCurveToPoint:pointA controlPoint:pointO];
     [verticalLine addArcWithCenter:self.mainView.center radius:R startAngle:M_PI endAngle:2*M_PI clockwise:NO];
+    [verticalLine addArcWithCenter:self.mainView.center radius:R startAngle:0 endAngle:M_PI_2 clockwise:NO];
     
     return [verticalLine CGPath];
 }
@@ -129,94 +203,108 @@
 
 
 -(void)tapToOpenUp{
-
-    if (verticalLineLayer == nil) {
-        verticalLineLayer = [CAShapeLayer layer];
-        verticalLineLayer.fillColor = [[UIColor redColor] CGColor];
-        [self.containerView.layer addSublayer:verticalLineLayer];
+    
+    if (!once) {
+        [self setUpSomeDatas];
+        once = YES;
     }
     
-    CGFloat positionX = 40.0f;
-    NSArray *values1_0 = @[
-                           (id) [self getRightLinePathWithAmount:(positionX * 0.6)],
-                           (id) [self getRightLinePathWithAmount:-(positionX * 0.4)],
-                           (id) [self getRightLinePathWithAmount:(positionX * 0.25)],
-                           (id) [self getRightLinePathWithAmount:-(positionX * 0.15)],
-                           (id) [self getRightLinePathWithAmount:(positionX * 0.05)],
-                           (id) [self getRightLinePathWithAmount:0.0]
-                           ];
+    if (verticalLineLayer == nil) {
+        verticalLineLayer = [CAShapeLayer layer];
+        verticalLineLayer.fillColor = [menuColor CGColor];
+        [self.containerView.layer insertSublayer:verticalLineLayer below:self.mainView.layer];
+    }
     
-    NSArray *values0_1 = @[
-                           (id) [self getRightLinePathWithAmount:0.0],
-                           (id) [self getRightLinePathWithAmount:(positionX * 0.05)],
-                           (id) [self getRightLinePathWithAmount:-(positionX * 0.25)],
-                           (id) [self getRightLinePathWithAmount:(positionX * 0.6)],
-                           (id) [self getRightLinePathWithAmount:-(positionX * 0.25)],
-                           (id) [self getRightLinePathWithAmount:(positionX * 0.05)],
-                           (id) [self getRightLinePathWithAmount:0.0]
-                           ];
-
     if (isOpened == NO) {
-        CAKeyframeAnimation *morph = [CAKeyframeAnimation animationWithKeyPath:@"path"];
-        morph.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        morph.values = values0_1;
-        morph.duration = 0.8f;
-        morph.removedOnCompletion = NO;
-        morph.fillMode = kCAFillModeForwards;
-        morph.delegate = self;
-        [verticalLineLayer addAnimation:morph forKey:@"bounce_0_1"];
-        
+        CAKeyframeAnimation *morph_right = [CAKeyframeAnimation animationWithKeyPath:@"path"];
+        morph_right.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        morph_right.values = values0_1_right;
+        morph_right.duration = 0.4f;
+        morph_right.removedOnCompletion = NO;
+        morph_right.fillMode = kCAFillModeForwards;
+        morph_right.delegate = self;
+        [verticalLineLayer addAnimation:morph_right forKey:@"bounce_0_1_right"];
+    
+
         for (UIView *item in Menus) {
             
-        
-            [UIView animateWithDuration:0.5f delay:0.05*item.tag usingSpringWithDamping:0.6f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState animations:^{
+            [UIView animateWithDuration:1.0f delay:0.05*item.tag usingSpringWithDamping:0.4f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction animations:^{
                 
                 NSValue *pointValue = [PointsDic objectForKey:[NSString stringWithFormat:@"center%ld",item.tag]];
                 CGPoint terminalPoint = [pointValue CGPointValue];
                 item.center = terminalPoint;
+                cross.transform = CGAffineTransformMakeRotation(45*(M_PI/180));
+                
             } completion:nil];
-            
-//            UISnapBehavior *snap1 = [[UISnapBehavior alloc]initWithItem:item snapToPoint:terminalPoint];
-//            snap1.action = ^(){
-//                [self updateLayerPath];
-//            };
-//            
-//            [self.animator addBehavior:snap1];
-            
         }
         isOpened = YES;
+        
     }else{
-        CAKeyframeAnimation *morph = [CAKeyframeAnimation animationWithKeyPath:@"path"];
-        morph.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-        morph.values = values1_0;
-        morph.duration = 0.8f;
-        morph.removedOnCompletion = NO;
-        morph.fillMode = kCAFillModeForwards;
-        morph.delegate = self;
-        [verticalLineLayer addAnimation:morph forKey:@"bounce_1_0"];
         
         for (UIView *item in Menus) {
             
-            [UIView animateWithDuration:0.5f delay:0.05*item.tag usingSpringWithDamping:0.6f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState animations:^{
-                
+            [UIView animateWithDuration:0.3f delay:0.05*item.tag options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction animations:^{
                 CGPoint terminalPoint = self.mainView.center;
                 item.center = terminalPoint;
+                cross.transform = CGAffineTransformIdentity;
             } completion:nil];
-//            UISnapBehavior *snap2 = [[UISnapBehavior alloc]initWithItem:item snapToPoint:terminalPoint];
-//            snap2.action = ^(){
-//                [self updateLayerPath];
-//            };
-//            [self.animator addBehavior:snap2];
             
-            
+            CAKeyframeAnimation *morph_left = [CAKeyframeAnimation animationWithKeyPath:@"path"];
+            morph_left.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+            morph_left.beginTime = CACurrentMediaTime()+0.1f;
+            morph_left.values = values1_0_right;
+            morph_left.duration = 0.4f;
+            morph_left.removedOnCompletion = NO;
+            morph_left.fillMode = kCAFillModeForwards;
+            morph_left.delegate = self;
+            [verticalLineLayer addAnimation:morph_left forKey:@"bounce_1_0_right"];
+
         }
+        
         isOpened = NO;
         
     }
     
 }
 
+- (void)animationDidStart:(CAAnimation *)anim{
+    
+}
 
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    if (anim == [verticalLineLayer animationForKey:@"bounce_0_1_right"]) {
+        CAKeyframeAnimation *morph_left = [CAKeyframeAnimation animationWithKeyPath:@"path"];
+        morph_left.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+//        morph_left.beginTime = CACurrentMediaTime()+0.3f;
+        morph_left.values = values0_1_left;
+        morph_left.duration = 0.4f;
+        morph_left.removedOnCompletion = NO;
+        morph_left.fillMode = kCAFillModeForwards;
+        morph_left.delegate = self;
+        [verticalLineLayer addAnimation:morph_left forKey:@"bounce_0_1_left"];
+        
+    }else if(anim == [verticalLineLayer animationForKey:@"bounce_1_0_right"]){
+        CAKeyframeAnimation *morph_right = [CAKeyframeAnimation animationWithKeyPath:@"path"];
+        morph_right.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+//        morph_right.beginTime = CACurrentMediaTime()+0.3f;
+        morph_right.values = values1_0_left;
+        morph_right.duration = 0.4f;
+        morph_right.removedOnCompletion = NO;
+        morph_right.fillMode = kCAFillModeForwards;
+        morph_right.delegate = self;
+        
+        [verticalLineLayer addAnimation:morph_right forKey:@"bounce_1_0_left"];
+        
+    }else if(anim == [verticalLineLayer animationForKey:@"bounce_1_0_left"] || [verticalLineLayer animationForKey:@"bounce_0_1_left"]){
+        [verticalLineLayer removeFromSuperlayer];
+        verticalLineLayer = nil;
+    }
+    
+}
+
+
+/*******方案一，失败，仅供参考********
 -(void)updateLayerPath{
     CGPoint originPoint = self.mainView.center;
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
@@ -299,12 +387,9 @@
 //            dLargerThanDis = NO;
         }
     }
-    
-    
-    
 }
 
-
+*/
 
 
 @end

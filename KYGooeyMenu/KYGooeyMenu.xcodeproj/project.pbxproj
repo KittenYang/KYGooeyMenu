@@ -15,6 +15,7 @@
 		5F5DCAEC1AE9442000CA8491 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAEA1AE9442000CA8491 /* LaunchScreen.xib */; };
 		5F5DCAF81AE9442100CA8491 /* KYGooeyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */; };
 		5F5DCB031AE944B000CA8491 /* KYGooeyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */; };
+		5F9601491AEAD09E007DCE19 /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9601481AEAD09E007DCE19 /* Cross.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenuTests.m; sourceTree = "<group>"; };
 		5F5DCB011AE944B000CA8491 /* KYGooeyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGooeyMenu.h; sourceTree = "<group>"; };
 		5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenu.m; sourceTree = "<group>"; };
+		5F9601471AEAD09E007DCE19 /* Cross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cross.h; sourceTree = "<group>"; };
+		5F9601481AEAD09E007DCE19 /* Cross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cross.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 			children = (
 				5F5DCB011AE944B000CA8491 /* KYGooeyMenu.h */,
 				5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */,
+				5F9601471AEAD09E007DCE19 /* Cross.h */,
+				5F9601481AEAD09E007DCE19 /* Cross.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			files = (
 				5F5DCB031AE944B000CA8491 /* KYGooeyMenu.m in Sources */,
 				5F5DCAE41AE9441F00CA8491 /* ViewController.m in Sources */,
+				5F9601491AEAD09E007DCE19 /* Cross.m in Sources */,
 				5F5DCAE11AE9441F00CA8491 /* AppDelegate.m in Sources */,
 				5F5DCADE1AE9441F00CA8491 /* main.m in Sources */,
 			);
@@ -435,6 +441,7 @@
 				5F5DCAFD1AE9442100CA8491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F5DCAFE1AE9442100CA8491 /* Build configuration list for PBXNativeTarget "KYGooeyMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +450,7 @@
 				5F5DCB001AE9442100CA8491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
