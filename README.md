@@ -2,6 +2,8 @@
 带粘性的扇形菜单
 
 
+![](gooey.gif)
+
 ##Usage
 Just two code:
 ```
