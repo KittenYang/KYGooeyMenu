@@ -3,7 +3,7 @@
 
 灵感来自[这个Dribbble设计](https://dribbble.com/shots/1936758-GIF-of-the-Tap-Bar-Concept)
 
-![](dribble_demo_gif)
+![](dribble_demo.gif)
 
 下面是实现的效果：
 ###1、点击每个具体的菜单可以获得相信的编号，使用时，可以switch这个序号进行想要的后续操作。
