@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "KYGooeyMenu.h"
 
-@interface ViewController ()
+
+@interface ViewController ()<menuDidSelectedDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *min;
 @property (strong, nonatomic) IBOutlet UILabel *current;
@@ -26,9 +27,17 @@
     [self.slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
 
     gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:100.0f andDelegate:self themeColor:[UIColor redColor]];
+    gooeyMenu.menuDelegate = self;
     gooeyMenu.MenuCount = 4;
     
 }
+
+
+#pragma mark -- 彩单选中的代理方法
+-(void)menuDidSelected:(NSInteger)index{
+    NSLog(@"选中第%ld",(long)index);
+}
+
 
 - (void)sliderValueChanged:(UISlider *)sender {
     self.current.text = [NSString stringWithFormat:@"%d",(int)sender.value];

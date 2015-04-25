@@ -85,7 +85,7 @@
     cross.backgroundColor = [UIColor clearColor];
     [self.mainView addSubview:cross];
     
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapToOpenUp)];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapToSwitchOpenOrClose)];
     [self.mainView addGestureRecognizer:tapGes];
 
 }
@@ -119,6 +119,9 @@
         item.center = self.mainView.center;
         item.bounds = CGRectMake(0, 0, r *2, r*2);
         item.layer.cornerRadius = item.bounds.size.width / 2;
+        UITapGestureRecognizer *menuTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(menuTap:)];
+        [item addGestureRecognizer:menuTap];
+        
         [self.containerView addSubview:item];
         [self.containerView sendSubviewToBack:item];
         [Menus addObject:item];
@@ -201,8 +204,21 @@
 }
 
 
+#pragma mark -- 点击菜单
+-(void)menuTap:(UITapGestureRecognizer *)tapGes{
 
--(void)tapToOpenUp{
+    for (NSInteger i = 0; i<menuCount; i++) {
+        if ((tapGes.view.tag == i+1) && [self.menuDelegate respondsToSelector:@selector(menuDidSelected:)]) {
+            [self.menuDelegate menuDidSelected:i+1];
+        }
+    }
+    
+    [self tapToSwitchOpenOrClose];
+}
+
+
+#pragma mark -- 点击大按钮
+-(void)tapToSwitchOpenOrClose{
     
     if (!once) {
         [self setUpSomeDatas];
