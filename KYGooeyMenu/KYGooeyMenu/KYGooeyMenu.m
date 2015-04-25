@@ -120,8 +120,7 @@
         UITapGestureRecognizer *menuTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(menuTap:)];
         [item addGestureRecognizer:menuTap];
         
-        [self.containerView addSubview:item];
-        [self.containerView sendSubviewToBack:item];
+        [self.containerView insertSubview:item belowSubview:self.mainView];
         [Menus addObject:item];
         
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
