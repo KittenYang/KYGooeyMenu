@@ -28,6 +28,8 @@
 
     gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:100.0f andDelegate:self themeColor:[UIColor redColor]];
     gooeyMenu.menuDelegate = self;
+    gooeyMenu.radius = 100/4;//大圆的1/4
+    gooeyMenu.extraDistance = 20;
     gooeyMenu.MenuCount = 4;
     
 }

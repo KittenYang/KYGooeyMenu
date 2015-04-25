@@ -13,8 +13,6 @@
 
 @property(nonatomic,strong)UIView *mainView;
 @property(nonatomic,strong)UIView *containerView;
-@property(nonatomic,strong)CADisplayLink *displayLink;
-@property(nonatomic,strong)UIDynamicAnimator *animator;
 
 @end
 
@@ -95,9 +93,9 @@
     
     //-----------计算目标点的位置----------
     R = self.mainView.bounds.size.width / 2;
-    r = self.mainView.bounds.size.width / 4;
+    r = self.radius;
     //子视图离开主视图的距离 [distance]
-    distance = R + r + 20;
+    distance = R + r + self.extraDistance;
     //平分之后的角度,弧度制，因为sinf、cosf需要弧度制
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
     
