@@ -11,7 +11,6 @@
 
 @interface KYGooeyMenu()
 
-@property(nonatomic,strong)UIView *mainView;
 @property(nonatomic,strong)UIView *containerView;
 
 @end

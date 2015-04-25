@@ -27,6 +27,9 @@
 //这里的距离是指 除了"R+r" 额外的高度，也就是中间空白的距离，如果distance设为0，你将看到它们相切。
 @property(nonatomic,assign)CGFloat extraDistance;
 
+//外部使用中，如需隐藏或者动画，请访问mainView 这个属性
+@property(nonatomic,strong)UIView *mainView;
+
 
 -(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor;
 
