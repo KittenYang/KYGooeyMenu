@@ -27,7 +27,6 @@
     CGFloat r;
     CGFloat distance;
     BOOL isOpened;
-    BOOL dLargerThanDis;
     CAShapeLayer *verticalLineLayer;
     
     NSArray *values1_0_right;
