@@ -1,18 +1,32 @@
 # KYGooeyMenu
 带粘性的扇形菜单
 
-灵感来自[这个Dribbble设计](https://dribbble.com/shots/1936758-GIF-of-the-Tap-Bar-Concept)
+Path menu with gooey menu.
+
+
+灵感来自[这个Dribbble设计](https://dribbble.com/shots/1936758-GIF-of-the-Tap-Bar-Concept):
+
+Inspire by this dribbble:
 
 ![](dribble_demo.gif)
 
 ###下面是实现的效果：
+###Here is what the repo can do:
 **1、点击每个具体的菜单可以获得相应的编号，使用时，可以switch这个序号进行想要的后续操作。**
+
+1.Tap each menu,you will get the number in the protocol method,so you can switch-case the number to do the later work.
 
 **2、可自定义菜单个数。**
 
+2.You can customize the number of the menu.
+
 **3、可自定义父菜单和子菜单间距。**
 
+3.You can customize the distance between super menu and the sub menus.
+
 **4、自定义颜色。**
+
+4.Customize the theme color.
 
 ![](gooey.gif)
 
