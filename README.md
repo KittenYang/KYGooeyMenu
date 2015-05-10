@@ -1,5 +1,7 @@
-# KYGooeyMenu
 
+<p align="left" >
+  <img src="logo.png" alt="KYGooeyMenu" title="KYGooeyMenu">
+</p>
 
 ![CocoaPods Version](https://img.shields.io/badge/pod-v1.0.4-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
