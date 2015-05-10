@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KYGooeyMenu"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "Gooey Effects 带粘性的扇形菜单"
 
   s.description  = <<-DESC
