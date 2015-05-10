@@ -1,4 +1,10 @@
 # KYGooeyMenu
+
+
+![CocoaPods Version](https://img.shields.io/badge/pod-v1.0.4-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-iOS-red.svg)
+
 带粘性的扇形菜单
 
 Path menu with gooey menu.
@@ -12,6 +18,7 @@ Inspire by this dribbble:
 
 ###下面是实现的效果：
 ###Here is what the repo can do:
+
 **1、点击每个具体的菜单可以获得相应的编号，使用时，可以switch这个序号进行想要的后续操作。**
 
 1.Tap each menu,you will get the number in the protocol method,so you can switch-case the number to do the later work.
@@ -29,6 +36,12 @@ Inspire by this dribbble:
 4.Customize the theme color.
 
 ![](gooey.gif)
+
+
+##Installation
+
+`pod 'KYGooeyMenu', '~> 1.0.4'`
+
 
 ##Usage
 ###Initialize
