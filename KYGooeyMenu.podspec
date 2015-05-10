@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.summary      = "Gooey Effects 带粘性的扇形菜单"
 
   s.description  = <<-DESC
-                   Gooey Effects 带粘性的扇形菜单
+                   Gooey Effects like menu 粘性的扇形菜单
                    DESC
 
   s.homepage     = "https://github.com/KittenYang/KYGooeyMenu"

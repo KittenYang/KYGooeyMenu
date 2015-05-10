@@ -242,7 +242,7 @@
             item.hidden = NO;
             [UIView animateWithDuration:1.0f delay:0.05*item.tag usingSpringWithDamping:0.4f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction animations:^{
                 
-                NSValue *pointValue = [PointsDic objectForKey:[NSString stringWithFormat:@"center%ld",item.tag]];
+                NSValue *pointValue = [PointsDic objectForKey:[NSString stringWithFormat:@"center%ld",(long)item.tag]];
                 CGPoint terminalPoint = [pointValue CGPointValue];
                 item.center = terminalPoint;
                 cross.transform = CGAffineTransformMakeRotation(45*(M_PI/180));
