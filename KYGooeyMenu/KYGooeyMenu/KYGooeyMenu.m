@@ -106,7 +106,7 @@
 
         CGPoint center = CGPointMake(originPoint.x + distance*cosDegree, originPoint.y - distance*sinDegree);
         NSLog(@"centers:%@",NSStringFromCGPoint(center));
-        [PointsDic setObject:[NSValue valueWithCGPoint:center] forKey:[NSString stringWithFormat:@"center%ld",(long)i+1]];
+        [PointsDic setObject:[NSValue valueWithCGPoint:center] forKey:[NSString stringWithFormat:@"center%ld",(long)(i+1)]];
         
         //创建每个menu
         UIView *item = [[UIView alloc]initWithFrame:CGRectZero];
