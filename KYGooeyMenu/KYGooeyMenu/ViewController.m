@@ -45,6 +45,7 @@
     self.current.text = [NSString stringWithFormat:@"%d",(int)sender.value];
 
     gooeyMenu.MenuCount = (int)sender.value;
+
 }
 
 
