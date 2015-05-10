@@ -47,7 +47,7 @@ Inspire by this dribbble:
 
 ##Usage
 ###Initialize
-```
+```objective-c
     gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:100.0f andDelegate:self themeColor:[UIColor redColor]];
     gooeyMenu.menuDelegate = self;
     gooeyMenu.radius = 100/4;     //这里把小圆半径设为大圆的1/4
@@ -57,7 +57,7 @@ Inspire by this dribbble:
 ```
 
 ###implement protocol method
-```
+```objective-c
 -(void)menuDidSelected:(int)index{
     NSLog(@"选中第%d",index);
 }
