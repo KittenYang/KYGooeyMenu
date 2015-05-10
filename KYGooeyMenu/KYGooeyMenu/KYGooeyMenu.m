@@ -21,7 +21,7 @@
     NSMutableArray *Menus;      // 存放menus
     NSMutableArray *MenuLayers; // 存放menus对应的layer
     CGRect menuFrame;
-    NSInteger menuCount;
+    int menuCount;
     UIColor *menuColor;
     CGFloat R;
     CGFloat r;
@@ -60,7 +60,7 @@
     return self;
 }
 
--(void)setMenuCount:(NSInteger)MenuCount{
+-(void)setMenuCount:(int)MenuCount{
     Menus = [NSMutableArray arrayWithCapacity:MenuCount];
     MenuLayers = [NSMutableArray arrayWithCapacity:MenuCount];
     menuCount = MenuCount;
@@ -100,13 +100,13 @@
     
     //参考点的坐标
     CGPoint originPoint = self.mainView.center;
-    for (NSInteger i = 0; i < menuCount; i++) {
+    for (int i = 0; i < menuCount; i++) {
         CGFloat cosDegree = cosf(degree * (i+1));
         CGFloat sinDegree = sinf(degree * (i+1));
 
         CGPoint center = CGPointMake(originPoint.x + distance*cosDegree, originPoint.y - distance*sinDegree);
         NSLog(@"centers:%@",NSStringFromCGPoint(center));
-        [PointsDic setObject:[NSValue valueWithCGPoint:center] forKey:[NSString stringWithFormat:@"center%ld",(long)(i+1)]];
+        [PointsDic setObject:[NSValue valueWithCGPoint:center] forKey:[NSString stringWithFormat:@"center%d",i+1]];
         
         //创建每个menu
         UIView *item = [[UIView alloc]initWithFrame:CGRectZero];
@@ -202,7 +202,7 @@
 #pragma mark -- 点击菜单
 -(void)menuTap:(UITapGestureRecognizer *)tapGes{
 
-    for (NSInteger i = 0; i<menuCount; i++) {
+    for (int i = 0; i<menuCount; i++) {
         if ((tapGes.view.tag == i+1) && [self.menuDelegate respondsToSelector:@selector(menuDidSelected:)]) {
             [self.menuDelegate menuDidSelected:i+1];
         }
@@ -242,7 +242,7 @@
             item.hidden = NO;
             [UIView animateWithDuration:1.0f delay:0.05*item.tag usingSpringWithDamping:0.4f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction animations:^{
                 
-                NSValue *pointValue = [PointsDic objectForKey:[NSString stringWithFormat:@"center%ld",(long)item.tag]];
+                NSValue *pointValue = [PointsDic objectForKey:[NSString stringWithFormat:@"center%d",(int)item.tag]];
                 CGPoint terminalPoint = [pointValue CGPointValue];
                 item.center = terminalPoint;
                 cross.transform = CGAffineTransformMakeRotation(45*(M_PI/180));

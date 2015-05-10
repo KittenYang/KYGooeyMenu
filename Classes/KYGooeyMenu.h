@@ -11,7 +11,7 @@
 
 @protocol menuDidSelectedDelegate <NSObject>
 
--(void)menuDidSelected:(NSInteger)index;
+-(void)menuDidSelected:(int)index;
 
 @end
 
@@ -19,7 +19,7 @@
 
 //******菜单的个数*********
 //The number of the menu
-@property(nonatomic,assign)NSInteger MenuCount;
+@property(nonatomic,assign)int MenuCount;
 
 //******子菜单的半径*********
 //the radius of the menu

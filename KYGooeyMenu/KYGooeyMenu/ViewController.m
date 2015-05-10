@@ -36,8 +36,8 @@
 
 
 #pragma mark -- 彩单选中的代理方法
--(void)menuDidSelected:(NSInteger)index{
-    NSLog(@"选中第%ld",(long)index);
+-(void)menuDidSelected:(int)index{
+    NSLog(@"选中第%d",index);
 }
 
 
