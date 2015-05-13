@@ -9,7 +9,7 @@
 
 带粘性的扇形菜单
 
-Path menu with gooey menu.
+Path menu with gooey effectes.
 
 
 灵感来自[这个Dribbble设计](https://dribbble.com/shots/1936758-GIF-of-the-Tap-Bar-Concept):
