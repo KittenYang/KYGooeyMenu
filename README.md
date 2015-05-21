@@ -3,7 +3,7 @@
   <img src="logo.png" alt="KYGooeyMenu" title="KYGooeyMenu">
 </p>
 
-![CocoaPods Version](https://img.shields.io/badge/pod-v1.0.4-brightgreen.svg)
+![CocoaPods Version](https://img.shields.io/badge/pod-v1.0.5-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-red.svg)
 
@@ -37,12 +37,23 @@ Inspire by this dribbble:
 
 4.Customize the theme color.
 
+**5、自定义菜单图标。**
+
+4.Customize menu icon.
+
+
 ![](gooey.gif)
+
+
+also,you can set the menu's icon:
+
+![](screenshot.jpg)
+
 
 
 ##Installation
 
-`pod 'KYGooeyMenu', '~> 1.0.4'`
+`pod 'KYGooeyMenu', '~> 1.0.5'`
 
 
 ##Usage
@@ -53,6 +64,12 @@ Inspire by this dribbble:
     gooeyMenu.radius = 100/4;     //这里把小圆半径设为大圆的1/4
     gooeyMenu.extraDistance = 20; //间距设为R+r+20。注：R+r是默认存在的。
     gooeyMenu.MenuCount = 4;      //4个子菜单
+    gooeyMenu.menuImagesArray = [NSMutableArray arrayWithObjects:
+        [UIImage imageNamed:@"tabbarItem_discover highlighted"],
+        [UIImage imageNamed:@"tabbarItem_group highlighted"],
+        [UIImage imageNamed:@"tabbarItem_home highlighted"],
+        [UIImage imageNamed:@"tabbarItem_message highlighted"],
+        [UIImage imageNamed:@"tabbarItem_user_man_highlighted"], nil];
 
 ```
 
