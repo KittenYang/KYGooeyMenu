@@ -30,7 +30,8 @@
     gooeyMenu.menuDelegate = self;
     gooeyMenu.radius = 100/4;//大圆的1/4
     gooeyMenu.extraDistance = 20;
-    gooeyMenu.MenuCount = 4;
+    gooeyMenu.MenuCount = 5;
+    gooeyMenu.menuImagesArray = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"tabbarItem_discover highlighted"],[UIImage imageNamed:@"tabbarItem_group highlighted"],[UIImage imageNamed:@"tabbarItem_home highlighted"],[UIImage imageNamed:@"tabbarItem_message highlighted"],[UIImage imageNamed:@"tabbarItem_user_man_highlighted"], nil];
     
 }
 

@@ -35,6 +35,10 @@
 @property(nonatomic,strong)UIView *mainView;
 
 
+//添加菜单图标
+@property(nonatomic,strong)NSMutableArray *menuImagesArray;
+
+
 -(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor;
 
 @property(nonatomic,weak)id<menuDidSelectedDelegate> menuDelegate;
