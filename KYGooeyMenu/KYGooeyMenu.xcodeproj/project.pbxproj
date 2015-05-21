@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F26E9EC1B0DF1C700056A6C /* KYGooeyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26E9E91B0DF1C700056A6C /* KYGooeyMenu.m */; };
+		5F26E9ED1B0DF1C700056A6C /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26E9EB1B0DF1C700056A6C /* Cross.m */; };
 		5F5DCADE1AE9441F00CA8491 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCADD1AE9441F00CA8491 /* main.m */; };
 		5F5DCAE11AE9441F00CA8491 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE01AE9441F00CA8491 /* AppDelegate.m */; };
 		5F5DCAE41AE9441F00CA8491 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE31AE9441F00CA8491 /* ViewController.m */; };
@@ -14,8 +16,6 @@
 		5F5DCAE91AE9442000CA8491 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE81AE9442000CA8491 /* Images.xcassets */; };
 		5F5DCAEC1AE9442000CA8491 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAEA1AE9442000CA8491 /* LaunchScreen.xib */; };
 		5F5DCAF81AE9442100CA8491 /* KYGooeyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */; };
-		5F5DCB031AE944B000CA8491 /* KYGooeyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */; };
-		5F9601491AEAD09E007DCE19 /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9601481AEAD09E007DCE19 /* Cross.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F26E9E81B0DF1C700056A6C /* KYGooeyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYGooeyMenu.h; path = ../../Classes/KYGooeyMenu.h; sourceTree = "<group>"; };
+		5F26E9E91B0DF1C700056A6C /* KYGooeyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYGooeyMenu.m; path = ../../Classes/KYGooeyMenu.m; sourceTree = "<group>"; };
+		5F26E9EA1B0DF1C700056A6C /* Cross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cross.h; path = ../../Classes/Cross.h; sourceTree = "<group>"; };
+		5F26E9EB1B0DF1C700056A6C /* Cross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cross.m; path = ../../Classes/Cross.m; sourceTree = "<group>"; };
 		5F5DCAD81AE9441F00CA8491 /* KYGooeyMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYGooeyMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5DCADC1AE9441F00CA8491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5DCADD1AE9441F00CA8491 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,10 +46,6 @@
 		5F5DCAF11AE9442100CA8491 /* KYGooeyMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYGooeyMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5DCAF61AE9442100CA8491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenuTests.m; sourceTree = "<group>"; };
-		5F5DCB011AE944B000CA8491 /* KYGooeyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGooeyMenu.h; sourceTree = "<group>"; };
-		5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenu.m; sourceTree = "<group>"; };
-		5F9601471AEAD09E007DCE19 /* Cross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cross.h; sourceTree = "<group>"; };
-		5F9601481AEAD09E007DCE19 /* Cross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cross.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +129,10 @@
 		5F5DCB041AE944B400CA8491 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5F5DCB011AE944B000CA8491 /* KYGooeyMenu.h */,
-				5F5DCB021AE944B000CA8491 /* KYGooeyMenu.m */,
-				5F9601471AEAD09E007DCE19 /* Cross.h */,
-				5F9601481AEAD09E007DCE19 /* Cross.m */,
+				5F26E9E81B0DF1C700056A6C /* KYGooeyMenu.h */,
+				5F26E9E91B0DF1C700056A6C /* KYGooeyMenu.m */,
+				5F26E9EA1B0DF1C700056A6C /* Cross.h */,
+				5F26E9EB1B0DF1C700056A6C /* Cross.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -237,9 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F5DCB031AE944B000CA8491 /* KYGooeyMenu.m in Sources */,
 				5F5DCAE41AE9441F00CA8491 /* ViewController.m in Sources */,
-				5F9601491AEAD09E007DCE19 /* Cross.m in Sources */,
+				5F26E9EC1B0DF1C700056A6C /* KYGooeyMenu.m in Sources */,
+				5F26E9ED1B0DF1C700056A6C /* Cross.m in Sources */,
 				5F5DCAE11AE9441F00CA8491 /* AppDelegate.m in Sources */,
 				5F5DCADE1AE9441F00CA8491 /* main.m in Sources */,
 			);

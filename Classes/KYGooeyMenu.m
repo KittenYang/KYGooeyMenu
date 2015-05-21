@@ -97,6 +97,8 @@
     //平分之后的角度,弧度制，因为sinf、cosf需要弧度制
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
     
+
+
     
     //参考点的坐标
     CGPoint originPoint = self.mainView.center;
@@ -115,6 +117,15 @@
         item.center = self.mainView.center;
         item.bounds = CGRectMake(0, 0, r *2, r*2);
         item.layer.cornerRadius = item.bounds.size.width / 2;
+        item.layer.masksToBounds = YES;
+        
+        //设置每个item的图片
+        CGFloat imageWidth = (item.frame.size.width / 2) *sin(M_PI_4) * 2;
+        UIImageView *menuImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, imageWidth, imageWidth)];
+        menuImage.center = CGPointMake(item.frame.size.width/2, item.frame.size.height/2);
+        menuImage.image = self.menuImagesArray[i];
+        [item addSubview:menuImage];
+        
         UITapGestureRecognizer *menuTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(menuTap:)];
         [item addGestureRecognizer:menuTap];
         
@@ -217,6 +228,7 @@
     
     if (!once) {
         [self setUpSomeDatas];
+        NSAssert(self.menuImagesArray.count == menuCount, @"Images' count is not equal with menus' count");
         once = YES;
     }
     
