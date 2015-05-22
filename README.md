@@ -86,6 +86,7 @@ also,you can set the menu's icon:
 
 
 ##版本
+##Version
 
 ###v1.0.5 
 
