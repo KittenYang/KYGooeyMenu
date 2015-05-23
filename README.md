@@ -14,7 +14,7 @@ Path menu with gooey effectes.
 
 灵感来自[这个Dribbble设计](https://dribbble.com/shots/1936758-GIF-of-the-Tap-Bar-Concept):
 
-Inspire by this dribbble:
+Inspired by this dribbble:
 
 ![](dribble_demo.gif)
 
