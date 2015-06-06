@@ -95,3 +95,6 @@ also,you can set the menu's icon:
 ###v1.0.4
   隐藏Menu时，背后的子菜单也会消失。When you hide the menu,the sub-menu in the back will also hide.
   
+
+##License
+This project is under MIT License. See LICENSE file for more information.
