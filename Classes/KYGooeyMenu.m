@@ -8,6 +8,7 @@
 
 #import "KYGooeyMenu.h"
 #import "Cross.h"
+#import "KYSpringLayerAnimation.h"
 
 @interface KYGooeyMenu()
 
@@ -97,8 +98,6 @@
     //平分之后的角度,弧度制，因为sinf、cosf需要弧度制
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
     
-
-
     
     //参考点的坐标
     CGPoint originPoint = self.mainView.center;
@@ -239,6 +238,9 @@
     }
     
     if (isOpened == NO) {
+        
+//        CAKeyframeAnimation *morph_right = [KYSpringLayerAnimation createSpring:@"path" duration:0.4f usingSpringWithDamping:0.5f initialSpringVelocity:3.0f fromValue:@(1) toValue:@(1)];
+        
         CAKeyframeAnimation *morph_right = [CAKeyframeAnimation animationWithKeyPath:@"path"];
         morph_right.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         morph_right.values = values0_1_right;

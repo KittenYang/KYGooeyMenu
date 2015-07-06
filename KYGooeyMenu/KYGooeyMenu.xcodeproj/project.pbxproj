@@ -16,6 +16,7 @@
 		5F5DCAE91AE9442000CA8491 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAE81AE9442000CA8491 /* Images.xcassets */; };
 		5F5DCAEC1AE9442000CA8491 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5DCAEA1AE9442000CA8491 /* LaunchScreen.xib */; };
 		5F5DCAF81AE9442100CA8491 /* KYGooeyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */; };
+		5FB874311B4A4025008A3940 /* KYSpringLayerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB874301B4A4025008A3940 /* KYSpringLayerAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		5F5DCAF11AE9442100CA8491 /* KYGooeyMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYGooeyMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5DCAF61AE9442100CA8491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenuTests.m; sourceTree = "<group>"; };
+		5FB8742F1B4A4025008A3940 /* KYSpringLayerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYSpringLayerAnimation.h; path = ../../Classes/KYSpringLayerAnimation.h; sourceTree = "<group>"; };
+		5FB874301B4A4025008A3940 /* KYSpringLayerAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYSpringLayerAnimation.m; path = ../../Classes/KYSpringLayerAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,10 +134,28 @@
 			children = (
 				5F26E9E81B0DF1C700056A6C /* KYGooeyMenu.h */,
 				5F26E9E91B0DF1C700056A6C /* KYGooeyMenu.m */,
+				5FB874321B4A402D008A3940 /* KYSpringLayerAnimation */,
+				5FB874331B4A403D008A3940 /* Cross */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		5FB874321B4A402D008A3940 /* KYSpringLayerAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				5FB8742F1B4A4025008A3940 /* KYSpringLayerAnimation.h */,
+				5FB874301B4A4025008A3940 /* KYSpringLayerAnimation.m */,
+			);
+			name = KYSpringLayerAnimation;
+			sourceTree = "<group>";
+		};
+		5FB874331B4A403D008A3940 /* Cross */ = {
+			isa = PBXGroup;
+			children = (
 				5F26E9EA1B0DF1C700056A6C /* Cross.h */,
 				5F26E9EB1B0DF1C700056A6C /* Cross.m */,
 			);
-			name = Classes;
+			name = Cross;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F5DCAE41AE9441F00CA8491 /* ViewController.m in Sources */,
+				5FB874311B4A4025008A3940 /* KYSpringLayerAnimation.m in Sources */,
 				5F26E9EC1B0DF1C700056A6C /* KYGooeyMenu.m in Sources */,
 				5F26E9ED1B0DF1C700056A6C /* Cross.m in Sources */,
 				5F5DCAE11AE9441F00CA8491 /* AppDelegate.m in Sources */,
