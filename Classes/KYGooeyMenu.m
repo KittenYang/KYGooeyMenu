@@ -96,13 +96,13 @@
     //子视图离开主视图的距离 [distance]
     distance = R + r + self.extraDistance;
     //平分之后的角度,弧度制，因为sinf、cosf需要弧度制
+    CGFloat degreeComp = (180 - 180/(menuCount+1))*(M_PI/180);
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
-    
     
     //参考点的坐标
     CGPoint originPoint = self.mainView.center;
     for (int i = 0; i < menuCount; i++) {
-        CGFloat cosDegree = cosf(degree * (i+1));
+        CGFloat cosDegree = cosf(degreeComp * (i+1));
         CGFloat sinDegree = sinf(degree * (i+1));
 
         CGPoint center = CGPointMake(originPoint.x + distance*cosDegree, originPoint.y - distance*sinDegree);
