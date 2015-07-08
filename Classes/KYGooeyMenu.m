@@ -211,11 +211,9 @@
 
 #pragma mark -- 点击菜单
 -(void)menuTap:(UITapGestureRecognizer *)tapGes{
-
-    for (int i = 0; i<menuCount; i++) {
-        if ((tapGes.view.tag == i+1) && [self.menuDelegate respondsToSelector:@selector(menuDidSelected:)]) {
-            [self.menuDelegate menuDidSelected:i+1];
-        }
+    
+    if ([self.menuDelegate respondsToSelector:@selector(didSelectMenuItem:)]) {
+        [self.menuDelegate didSelectMenuItem:tapGes.view.tag - 1];
     }
     
     [self tapToSwitchOpenOrClose];
