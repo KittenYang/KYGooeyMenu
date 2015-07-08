@@ -274,7 +274,7 @@
                 item.center = terminalPoint;
                 cross.transform = CGAffineTransformIdentity;
             } completion:^(BOOL finished) {
-                item.hidden = YES;
+//                item.hidden = YES;
             }];
             
             CAKeyframeAnimation *morph_left = [CAKeyframeAnimation animationWithKeyPath:@"path"];
@@ -332,92 +332,6 @@
 }
 
 
-/*******方案一，失败，仅供参考********
--(void)updateLayerPath{
-    CGPoint originPoint = self.mainView.center;
-    CGFloat degree = (180/(menuCount+1))*(M_PI/180);
-    
-    for (NSInteger i = 0; i < menuCount; i++) {
-        CGFloat cosDegree = cosf(degree * (i+1));
-        CGFloat sinDegree = sinf(degree * (i+1));
-
-        
-        UIView  *menu_  = (UIView*)Menus[i];
-        CALayer *layer_ = [menu_.layer presentationLayer];
-        CGPoint movingCenter = CGPointMake(layer_.frame.origin.x + layer_.frame.size.width/2, layer_.frame.origin.y + layer_.frame.size.height/2);
-        CGFloat d = sqrtf((movingCenter.x-originPoint.x)*(movingCenter.x-originPoint.x) + (movingCenter.y-originPoint.y)*(movingCenter.y-originPoint.y));
-        
-        
-        //更新layer的path
-        CGPoint pointA = CGPointMake(originPoint.x - R*sinDegree , originPoint.y - R*cosDegree);
-        CGPoint pointB = CGPointMake(originPoint.x + R*sinDegree , originPoint.y + R*cosDegree);
-        CGPoint pointC = CGPointMake(originPoint.x + r*sinDegree + d*cosDegree, originPoint.y - d*sinDegree + r*cosDegree);
-        CGPoint pointD = CGPointMake(originPoint.x + d*cosDegree - r*sinDegree,originPoint.y - d*sinDegree - r*cosDegree);
-        CGPoint itemCenter = CGPointMake((pointC.x+pointD.x)/2, (pointC.y+pointD.y)/2);
-        
-        CGPoint controlpoint = CGPointMake((itemCenter.x + originPoint.x)/2, (itemCenter.y  + originPoint.y)/2);
-        CGPoint controlPointRight = CGPointMake(controlpoint.x + (r/2)*sinDegree, controlpoint.y + (r/2)*cosDegree);
-        CGPoint controlPointLeft = CGPointMake(controlpoint.x - (r/2)*sinDegree, controlpoint.y - (r/2)*cosDegree);
-        
-        CGPoint controlPoint1 = CGPointMake(itemCenter.x+r*cosDegree, itemCenter.y-r*sinDegree);
-
-        
-//        //-----tuning------
-//        UIView *helperViewA = [[UIView alloc]initWithFrame:CGRectZero];
-//        helperViewA.backgroundColor = [UIColor blueColor];
-//        helperViewA.center = pointA;
-//        helperViewA.bounds = CGRectMake(0, 0, 10, 10);
-//        [self.containerView addSubview:helperViewA];
-//        
-//        UIView *helperViewB = [[UIView alloc]initWithFrame:CGRectZero];
-//        helperViewB.backgroundColor = [UIColor yellowColor];
-//        helperViewB.center = pointB;
-//        helperViewB.bounds = CGRectMake(0, 0, 10, 10);
-//        [self.containerView addSubview:helperViewB];
-//        
-//        UIView *helperViewC = [[UIView alloc]initWithFrame:CGRectZero];
-//        helperViewC.backgroundColor = [UIColor purpleColor];
-//        helperViewC.center = pointC;
-//        helperViewC.bounds = CGRectMake(0, 0, 10, 10);
-//        [self.containerView addSubview:helperViewC];
-//        
-//        UIView *helperViewD = [[UIView alloc]initWithFrame:CGRectZero];
-//        helperViewD.backgroundColor = [UIColor orangeColor];
-//        helperViewD.center = pointD;
-//        helperViewD.bounds = CGRectMake(0, 0, 10, 10);
-//        [self.containerView addSubview:helperViewD];
-//        
-//        UIView *helperViewE = [[UIView alloc]initWithFrame:CGRectZero];
-//        helperViewE.backgroundColor = [UIColor greenColor];
-//        helperViewE.center = controlPoint;
-//        helperViewE.bounds = CGRectMake(0, 0, 10, 10);
-//        [self.containerView addSubview:helperViewE];
-//        //-------
-        
-        UIBezierPath *layerPath = [UIBezierPath bezierPath];
-        [layerPath moveToPoint:pointA];
-        [layerPath addLineToPoint:pointB];
-//        [layerPath addLineToPoint:pointC];
-        [layerPath addQuadCurveToPoint:pointC controlPoint:controlPointRight];
-        [layerPath addQuadCurveToPoint:pointD controlPoint:controlPoint1];
-//        [layerPath addLineToPoint:pointD];
-        [layerPath addQuadCurveToPoint:pointA controlPoint:controlPointLeft];
-        
-        CAShapeLayer *menuLayer_ = (CAShapeLayer *)MenuLayers[i];
-        menuLayer_.path = layerPath.CGPath;
-        
-        
-        if (d > R+r-5 ) {
-            menuLayer_.hidden = YES;
-//            dLargerThanDis = YES;
-        }else{
-            menuLayer_.hidden = NO;
-//            dLargerThanDis = NO;
-        }
-    }
-}
-
-*/
 
 
 @end
