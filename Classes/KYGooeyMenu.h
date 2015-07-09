@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol KYGooeyMenuDelegate <NSObject>
+@protocol menuDidSelectedDelegate <NSObject>
 
--(void)didSelectMenuItem:(NSUInteger)index;
+-(void)menuDidSelected:(int)index;
 
 @end
 
@@ -41,5 +41,5 @@
 
 -(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor;
 
-@property(nonatomic,weak)id<KYGooeyMenuDelegate> menuDelegate;
+@property(nonatomic,weak)id<menuDidSelectedDelegate> menuDelegate;
 @end

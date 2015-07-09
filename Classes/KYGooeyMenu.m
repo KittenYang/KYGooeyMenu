@@ -96,13 +96,13 @@
     //子视图离开主视图的距离 [distance]
     distance = R + r + self.extraDistance;
     //平分之后的角度,弧度制，因为sinf、cosf需要弧度制
-    CGFloat degreeComp = (180 - 180/(menuCount+1))*(M_PI/180);
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
+    
     
     //参考点的坐标
     CGPoint originPoint = self.mainView.center;
     for (int i = 0; i < menuCount; i++) {
-        CGFloat cosDegree = cosf(degreeComp * (i+1));
+        CGFloat cosDegree = cosf(degree * (i+1));
         CGFloat sinDegree = sinf(degree * (i+1));
 
         CGPoint center = CGPointMake(originPoint.x + distance*cosDegree, originPoint.y - distance*sinDegree);
@@ -120,12 +120,10 @@
         
         //设置每个item的图片
         CGFloat imageWidth = (item.frame.size.width / 2) *sin(M_PI_4) * 2;
-        if (self.menuImagesArray && [self.menuImagesArray count] > 0) {
-            UIImageView *menuImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, imageWidth, imageWidth)];
-            menuImage.center = CGPointMake(item.frame.size.width/2, item.frame.size.height/2);
-            menuImage.image = self.menuImagesArray[i];
-            [item addSubview:menuImage];
-        }
+        UIImageView *menuImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, imageWidth, imageWidth)];
+        menuImage.center = CGPointMake(item.frame.size.width/2, item.frame.size.height/2);
+        menuImage.image = self.menuImagesArray[i];
+        [item addSubview:menuImage];
         
         UITapGestureRecognizer *menuTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(menuTap:)];
         [item addGestureRecognizer:menuTap];
@@ -213,9 +211,11 @@
 
 #pragma mark -- 点击菜单
 -(void)menuTap:(UITapGestureRecognizer *)tapGes{
-    
-    if ([self.menuDelegate respondsToSelector:@selector(didSelectMenuItem:)]) {
-        [self.menuDelegate didSelectMenuItem:tapGes.view.tag - 1];
+
+    for (int i = 0; i<menuCount; i++) {
+        if ((tapGes.view.tag == i+1) && [self.menuDelegate respondsToSelector:@selector(menuDidSelected:)]) {
+            [self.menuDelegate menuDidSelected:i+1];
+        }
     }
     
     [self tapToSwitchOpenOrClose];
@@ -227,9 +227,7 @@
     
     if (!once) {
         [self setUpSomeDatas];
-        if (self.menuImagesArray && [self.menuImagesArray count] > 0) {
-            NSAssert(self.menuImagesArray.count == menuCount, @"Images' count is not equal with menus' count");
-        }
+        NSAssert(self.menuImagesArray.count == menuCount, @"Images' count is not equal with menus' count");
         once = YES;
     }
     
