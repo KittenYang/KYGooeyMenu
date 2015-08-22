@@ -19,8 +19,8 @@
 
 @implementation KYGooeyMenu{
     NSMutableDictionary *PointsDic;
-    NSMutableArray *Menus;      // 存放menus
-    NSMutableArray *MenuLayers; // 存放menus对应的layer
+    NSMutableArray *Menus;
+    NSMutableArray *MenuLayers;
     CGRect menuFrame;
     int menuCount;
     UIColor *menuColor;
@@ -42,7 +42,7 @@
 
 
 
--(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor{
+-(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andSuperView:(UIView *)superView themeColor:(UIColor *)themeColor{
     menuFrame = CGRectMake(origin.x, origin.y, diameter, diameter);
     self = [super initWithFrame:menuFrame];
 
@@ -51,7 +51,7 @@
         PointsDic = [NSMutableDictionary dictionary];
         menuColor = themeColor;
         isOpened = NO;
-        self.containerView = controller.view;
+        self.containerView = superView;
         [self.containerView addSubview:self];
         once = NO;
         [self addSomeViews];
@@ -75,7 +75,7 @@
     self.mainView.layer.masksToBounds = YES;
     [self.containerView addSubview:self.mainView];
     
-    //初始化加号
+    //The cross view
     cross = [[Cross alloc]init];
     cross.center = CGPointMake(self.mainView.bounds.size.width/2, self.mainView.bounds.size.height/2);
     cross.bounds = CGRectMake(0, 0, menuFrame.size.width/2, menuFrame.size.width/2);
@@ -90,16 +90,18 @@
 -(void)setUpSomeDatas{
 
     
-    //-----------计算目标点的位置----------
+    //-----------Calculate the destination point of items----------
     R = self.mainView.bounds.size.width / 2;
     r = self.radius;
-    //子视图离开主视图的距离 [distance]
+    
+    //the distance between items and menu
     distance = R + r + self.extraDistance;
-    //平分之后的角度,弧度制，因为sinf、cosf需要弧度制
+    
+    //the degree of every two items
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
     
     
-    //参考点的坐标
+
     CGPoint originPoint = self.mainView.center;
     for (int i = 0; i < menuCount; i++) {
         CGFloat cosDegree = cosf(degree * (i+1));
@@ -109,7 +111,7 @@
         NSLog(@"centers:%@",NSStringFromCGPoint(center));
         [PointsDic setObject:[NSValue valueWithCGPoint:center] forKey:[NSString stringWithFormat:@"center%d",i+1]];
         
-        //创建每个menu
+        //Create items
         UIView *item = [[UIView alloc]initWithFrame:CGRectZero];
         item.backgroundColor = menuColor;
         item.tag = i+1;
@@ -118,7 +120,7 @@
         item.layer.cornerRadius = item.bounds.size.width / 2;
         item.layer.masksToBounds = YES;
         
-        //设置每个item的图片
+        //Setup the image of every item
         CGFloat imageWidth = (item.frame.size.width / 2) *sin(M_PI_4) * 2;
         UIImageView *menuImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, imageWidth, imageWidth)];
         menuImage.center = CGPointMake(item.frame.size.width/2, item.frame.size.height/2);
@@ -139,7 +141,7 @@
     }
     
     
-    //配置关键帧的value
+    //Setup key frames
     CGFloat positionX = 50.0f;
     values1_0_right = @[
                         (id) [self getRightLinePathWithAmount:(positionX * 0.6)],
@@ -209,7 +211,7 @@
 }
 
 
-#pragma mark -- 点击菜单
+#pragma mark -- tap the item
 -(void)menuTap:(UITapGestureRecognizer *)tapGes{
 
     for (int i = 0; i<menuCount; i++) {
@@ -222,7 +224,7 @@
 }
 
 
-#pragma mark -- 点击大按钮
+#pragma mark -- tap the menu
 -(void)tapToSwitchOpenOrClose{
     
     if (!once) {
@@ -263,7 +265,9 @@
                 
             } completion:nil];
         }
+        
         isOpened = YES;
+        
         
     }else{
         

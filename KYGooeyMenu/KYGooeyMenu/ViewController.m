@@ -26,7 +26,7 @@
     self.min.text = [NSString stringWithFormat:@"%d",(int)self.slider.minimumValue] ;
     [self.slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
 
-    gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:100.0f andDelegate:self themeColor:[UIColor redColor]];
+    gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:100.0f andSuperView:self.view themeColor:[UIColor redColor]];
     gooeyMenu.menuDelegate = self;
     gooeyMenu.radius = 100/4;//大圆的1/4
     gooeyMenu.extraDistance = 20;
