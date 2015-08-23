@@ -18,25 +18,34 @@
 @interface KYGooeyMenu : UIView
 
 
-//The number of the items
+/**
+ *  The number of the items
+ */
 @property(nonatomic,assign)int MenuCount;
 
 
-//the radius of the item
+/**
+ *  the radius of the item
+ */
 @property(nonatomic,assign)CGFloat radius;
 
 
-//******子菜单离开父菜单的距离*********
-//这里的距离是指 除了"R+r" 额外的高度，也就是中间空白的距离，如果distance设为0，你将看到它们相切。
-//This property means the extra distance between super-menu anf sub-menu(if you set extraDistance=0 ,you will see the sub-menu is tangent to the super-menu)
+/**
+ *  这里的距离是指 除了"R+r" 额外的高度，也就是中间空白的距离，如果distance设为0，你将看到它们相切
+ *  This property means the extra distance between menu and items(if you set extraDistance=0 ,you will see the items are tangent to the menu)
+ */
 @property(nonatomic,assign)CGFloat extraDistance;
 
 
-//if you want to hidden this gooey menu or you wanna transform such as translation,you must use this property
+/**
+ *  if you want to hidden this gooey menu or you wanna transform such as translation,you must use this property
+ */
 @property(nonatomic,strong)UIView *mainView;
 
 
-//add item images
+/**
+ *  add item images
+ */
 @property(nonatomic,strong)NSMutableArray *menuImagesArray;
 
 
@@ -52,8 +61,10 @@
  */
 -(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andSuperView:(UIView *)superView themeColor:(UIColor *)themeColor;
 
+
 /**
  *  The delegate of KYGooeyMenu
  */
 @property(nonatomic,weak)id<menuDidSelectedDelegate> menuDelegate;
+
 @end

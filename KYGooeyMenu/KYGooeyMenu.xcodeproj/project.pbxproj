@@ -18,6 +18,7 @@
 		5F5DCAF81AE9442100CA8491 /* KYGooeyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DCAF71AE9442100CA8491 /* KYGooeyMenuTests.m */; };
 		5FB874311B4A4025008A3940 /* KYSpringLayerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB874301B4A4025008A3940 /* KYSpringLayerAnimation.m */; };
 		5FDF18971B88EAC000A671E6 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF18961B88EAC000A671E6 /* MenuLayer.m */; };
+		5FDF189B1B8902A800A671E6 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF189A1B8902A800A671E6 /* Menu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		5FB874301B4A4025008A3940 /* KYSpringLayerAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYSpringLayerAnimation.m; path = ../../Classes/KYSpringLayerAnimation.m; sourceTree = "<group>"; };
 		5FDF18951B88EAC000A671E6 /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuLayer.h; path = ../../Classes/MenuLayer/MenuLayer.h; sourceTree = "<group>"; };
 		5FDF18961B88EAC000A671E6 /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuLayer.m; path = ../../Classes/MenuLayer/MenuLayer.m; sourceTree = "<group>"; };
+		5FDF18991B8902A800A671E6 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = ../../Classes/Menu/Menu.h; sourceTree = "<group>"; };
+		5FDF189A1B8902A800A671E6 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menu.m; path = ../../Classes/Menu/Menu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 			children = (
 				5F26E9E81B0DF1C700056A6C /* KYGooeyMenu.h */,
 				5F26E9E91B0DF1C700056A6C /* KYGooeyMenu.m */,
+				5FDF189C1B8902AF00A671E6 /* Menu */,
 				5FDF18981B88EAC400A671E6 /* MenuLayer */,
 				5FB874321B4A402D008A3940 /* KYSpringLayerAnimation */,
 				5FB874331B4A403D008A3940 /* Cross */,
@@ -169,6 +173,15 @@
 				5FDF18961B88EAC000A671E6 /* MenuLayer.m */,
 			);
 			name = MenuLayer;
+			sourceTree = "<group>";
+		};
+		5FDF189C1B8902AF00A671E6 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5FDF18991B8902A800A671E6 /* Menu.h */,
+				5FDF189A1B8902A800A671E6 /* Menu.m */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +290,7 @@
 				5F26E9ED1B0DF1C700056A6C /* Cross.m in Sources */,
 				5FDF18971B88EAC000A671E6 /* MenuLayer.m in Sources */,
 				5F5DCAE11AE9441F00CA8491 /* AppDelegate.m in Sources */,
+				5FDF189B1B8902A800A671E6 /* Menu.m in Sources */,
 				5F5DCADE1AE9441F00CA8491 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: qitao yang (B2HSA2SE73)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinyu Li (XWYND9KE57)";
 				INFOPLIST_FILE = KYGooeyMenu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

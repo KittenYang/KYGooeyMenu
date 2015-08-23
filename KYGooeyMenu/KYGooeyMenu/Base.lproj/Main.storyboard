@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
@@ -36,12 +36,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GPd-cJ-aX7">
+                                <rect key="frame" x="276" y="335" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Hy4-qj-VZ1" secondAttribute="centerY" id="5c8-tp-ooL"/>
+                            <constraint firstAttribute="centerX" secondItem="GPd-cJ-aX7" secondAttribute="centerX" id="Jw3-Ao-dUy"/>
                             <constraint firstAttribute="centerY" secondItem="4CR-nR-7tj" secondAttribute="centerY" id="Sw6-2l-nCq"/>
                             <constraint firstAttribute="centerY" secondItem="xYA-qA-6Zk" secondAttribute="centerY" id="Vra-qu-Y0P"/>
+                            <constraint firstItem="GPd-cJ-aX7" firstAttribute="top" secondItem="Hy4-qj-VZ1" secondAttribute="bottom" constant="20" id="aWb-Oe-DG1"/>
                             <constraint firstAttribute="centerX" secondItem="Hy4-qj-VZ1" secondAttribute="centerX" id="el6-FY-g3a"/>
                             <constraint firstItem="xYA-qA-6Zk" firstAttribute="leading" secondItem="Hy4-qj-VZ1" secondAttribute="trailing" constant="16" id="okg-0e-uMf"/>
                             <constraint firstItem="Hy4-qj-VZ1" firstAttribute="leading" secondItem="4CR-nR-7tj" secondAttribute="trailing" constant="16" id="s7z-TQ-bcd"/>
@@ -50,6 +55,7 @@
                     <connections>
                         <outlet property="current" destination="xYA-qA-6Zk" id="STi-X9-CuY"/>
                         <outlet property="min" destination="4CR-nR-7tj" id="onk-H7-I48"/>
+                        <outlet property="showDedugPoints" destination="GPd-cJ-aX7" id="pEv-ZZ-0iA"/>
                         <outlet property="slider" destination="Hy4-qj-VZ1" id="71n-f9-DAM"/>
                     </connections>
                 </viewController>

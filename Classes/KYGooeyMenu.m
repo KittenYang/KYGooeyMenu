@@ -124,7 +124,9 @@
         CGFloat imageWidth = (item.frame.size.width / 2) *sin(M_PI_4) * 2;
         UIImageView *menuImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, imageWidth, imageWidth)];
         menuImage.center = CGPointMake(item.frame.size.width/2, item.frame.size.height/2);
-        menuImage.image = self.menuImagesArray[i];
+//        if (i<menuCount-1) {
+            menuImage.image = self.menuImagesArray[i];
+//        }
         [item addSubview:menuImage];
         
         UITapGestureRecognizer *menuTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(menuTap:)];
@@ -229,7 +231,7 @@
     
     if (!once) {
         [self setUpSomeDatas];
-        NSAssert(self.menuImagesArray.count == menuCount, @"Images' count is not equal with menus' count");
+//        NSAssert(self.menuImagesArray.count == menuCount, @"Images' count is not equal with menus' count");
         once = YES;
     }
     

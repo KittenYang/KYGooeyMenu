@@ -12,10 +12,18 @@
 @interface KYSpringLayerAnimation : NSObject
 
 
-//Normal Anim
-+(CABasicAnimation *)create:(NSString *)keypath duration:(CFTimeInterval)duration fromValue:(id)fromValue toValue:(id)toValue;
++(instancetype)sharedAnimManager;
 
-//Spring Anim
-+(CAKeyframeAnimation *)createSpring:(NSString *)keypath duration:(CFTimeInterval)duration usingSpringWithDamping:(CGFloat)damping initialSpringVelocity:(CGFloat)velocity fromValue:(id)fromValue toValue:(id)toValue;
+//Normal Anim -- 线性函数
+-(CAKeyframeAnimation *)createBasicAnima:(NSString *)keypath duration:(CFTimeInterval)duration fromValue:(id)fromValue toValue:(id)toValue;
+
+//Spring Anim -- 弹性曲线
+-(CAKeyframeAnimation *)createSpringAnima:(NSString *)keypath duration:(CFTimeInterval)duration usingSpringWithDamping:(CGFloat)damping initialSpringVelocity:(CGFloat)velocity fromValue:(id)fromValue toValue:(id)toValue;
+
+//Curve Anim -- 二次平滑抛物函数
+-(CAKeyframeAnimation *)createCurveAnima:(NSString *)keypath duration:(CFTimeInterval)duration fromValue:(id)fromValue toValue:(id)toValue;
+
+//Curve Anim -- 抛到一半的二次平滑抛物函数
+-(CAKeyframeAnimation *)createHalfCurveAnima:(NSString *)keypath duration:(CFTimeInterval)duration fromValue:(id)fromValue toValue:(id)toValue;
 
 @end
