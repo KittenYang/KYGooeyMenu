@@ -11,7 +11,7 @@
 
 @interface MenuLayer ()
 
-@property(nonatomic,assign)CGFloat xAxisPercent;
+
 
 @end
 
@@ -30,12 +30,16 @@
     self = [super initWithLayer:layer];
     if (self) {
         
+        //...在这里拷贝layer的所有property
         self.showDebug = layer.showDebug;
         self.xAxisPercent = layer.xAxisPercent;
+        self.animState = layer.animState;
+        
     }
     return self;
     
 }
+
 
 +(BOOL)needsDisplayForKey:(NSString *)key{
     if ([key isEqualToString:@"xAxisPercent"]) {
@@ -50,12 +54,47 @@
     CGRect real_rect = CGRectInset(self.frame, OFF,OFF);
     CGFloat offset = real_rect.size.width/ 3.6;
     CGPoint center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-//    CGFloat moveDistance = _xAxisPercent*((real_rect.size.width/2-real_rect.size.width/3.6)/2);
-    CGFloat moveDistance = _xAxisPercent*(offset);
+
+    CGFloat moveDistance_1;
+    CGFloat moveDistance_2;
+    CGPoint top_left;
+    CGPoint top_center;
+    CGPoint top_right;
     
-    CGPoint top_left   =  CGPointMake(center.x-offset-moveDistance, OFF);
-    CGPoint top_center =  CGPointMake(center.x-moveDistance, OFF);
-    CGPoint top_right  =  CGPointMake(center.x+offset-moveDistance, OFF);
+    if (_animState == STATE1) {
+        
+        moveDistance_1 = _xAxisPercent*(real_rect.size.width/2 - offset)/2;
+        top_left   =  CGPointMake(center.x-offset-moveDistance_1*2, OFF);
+        top_center =  CGPointMake(center.x-moveDistance_1, OFF);
+        top_right  =  CGPointMake(center.x+offset, OFF);
+        
+    }else if(_animState == STATE2){
+        CGFloat hightFactor;
+        if (_xAxisPercent >= 0.2) {
+            hightFactor = 1-_xAxisPercent;
+        }else{
+            hightFactor = _xAxisPercent;
+        }
+        moveDistance_1 = (real_rect.size.width/2 - offset)/2;
+        moveDistance_2 = _xAxisPercent*(real_rect.size.width/3);
+        top_left   =  CGPointMake(center.x-offset-moveDistance_1*2 + moveDistance_2, OFF-20*hightFactor);
+        top_center =  CGPointMake(center.x-moveDistance_1 + moveDistance_2, OFF-25*hightFactor);
+        top_right  =  CGPointMake(center.x+offset+moveDistance_2, OFF-20*hightFactor);
+        
+    }else if(_animState == STATE3){
+        
+        moveDistance_1 = (real_rect.size.width/2 - offset)/2;
+        moveDistance_2 = (real_rect.size.width/3);
+        CGFloat gooeyDis_1 = _xAxisPercent*(center.x-offset-moveDistance_1*2 + moveDistance_2-(center.x-offset));
+        CGFloat gooeyDis_2 = _xAxisPercent*(center.x-moveDistance_1 + moveDistance_2-(center.x));
+        CGFloat gooeyDis_3 = _xAxisPercent*(center.x+offset+moveDistance_2-(center.x+offset));
+        
+        top_left   =  CGPointMake(center.x-offset-moveDistance_1*2 + moveDistance_2 - gooeyDis_1, OFF);
+        top_center =  CGPointMake(center.x-moveDistance_1 + moveDistance_2 - gooeyDis_2, OFF);
+        top_right  =  CGPointMake(center.x+offset+moveDistance_2 - gooeyDis_3, OFF);
+        
+    }
+    
     
     CGPoint right_top    =  CGPointMake(CGRectGetMaxX(real_rect), center.y-offset);
     CGPoint right_center =  CGPointMake(CGRectGetMaxX(real_rect), center.y);
@@ -78,8 +117,9 @@
     [circlePath addCurveToPoint:top_center controlPoint1:left_top controlPoint2:top_left];
     [circlePath closePath];
     
+    
     CGContextAddPath(ctx, circlePath.CGPath);
-    CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
+    CGContextSetFillColorWithColor(ctx, [UIColor colorWithRed:29.0/255.0 green:163.0/255.0 blue:1 alpha:1].CGColor);
     CGContextFillPath(ctx);
 
     

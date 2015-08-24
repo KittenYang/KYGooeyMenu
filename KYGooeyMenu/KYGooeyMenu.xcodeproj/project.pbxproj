@@ -75,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F24C8471B8B913400458EC9 /* KYGooeyMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5F26E9E81B0DF1C700056A6C /* KYGooeyMenu.h */,
+				5F26E9E91B0DF1C700056A6C /* KYGooeyMenu.m */,
+			);
+			name = KYGooeyMenu;
+			sourceTree = "<group>";
+		};
 		5F5DCACF1AE9441F00CA8491 = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +147,7 @@
 		5F5DCB041AE944B400CA8491 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5F26E9E81B0DF1C700056A6C /* KYGooeyMenu.h */,
-				5F26E9E91B0DF1C700056A6C /* KYGooeyMenu.m */,
+				5F24C8471B8B913400458EC9 /* KYGooeyMenu */,
 				5FDF189C1B8902AF00A671E6 /* Menu */,
 				5FDF18981B88EAC400A671E6 /* MenuLayer */,
 				5FB874321B4A402D008A3940 /* KYSpringLayerAnimation */,

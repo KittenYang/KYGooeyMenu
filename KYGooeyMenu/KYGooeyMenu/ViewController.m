@@ -32,6 +32,7 @@
     self.slider.hidden = YES;
     self.min.hidden = YES;
     self.current.hidden = YES;
+    
 //    gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:100.0f andSuperView:self.view themeColor:[UIColor redColor]];
     gooeyMenu.menuDelegate = self;
     gooeyMenu.radius = 100/4;//大圆的1/4
@@ -40,9 +41,11 @@
     gooeyMenu.menuImagesArray = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"tabbarItem_discover highlighted"],[UIImage imageNamed:@"tabbarItem_group highlighted"],[UIImage imageNamed:@"tabbarItem_home highlighted"],[UIImage imageNamed:@"tabbarItem_message highlighted"],[UIImage imageNamed:@"tabbarItem_user_man_highlighted"], nil];
 
     
+    
+    
+    //*******test version*******
     _menu = [[Menu alloc]initWithFrame:CGRectMake(self.view.center.x-100, self.view.center.y-200, 200, 200)];
     [self.view addSubview:_menu];
-    
     [self.showDedugPoints addTarget:self action:@selector(showDedug:) forControlEvents:UIControlEventValueChanged];
     
     
