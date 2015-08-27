@@ -44,7 +44,7 @@
     
     
     //*******test version*******
-    _menu = [[Menu alloc]initWithFrame:CGRectMake(self.view.center.x-100, self.view.center.y-200, 200, 200)];
+    _menu = [[Menu alloc]initWithFrame:CGRectMake(self.view.center.x-50, self.view.frame.size.height - 200, 100, 100)];
     [self.view addSubview:_menu];
     [self.showDedugPoints addTarget:self action:@selector(showDedug:) forControlEvents:UIControlEventValueChanged];
     
