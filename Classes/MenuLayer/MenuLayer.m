@@ -77,8 +77,8 @@
         }
         moveDistance_1 = (real_rect.size.width/2 - offset)/2;
         moveDistance_2 = _xAxisPercent*(real_rect.size.width/3);
-        top_left   =  CGPointMake(center.x-offset-moveDistance_1*2 + moveDistance_2, OFF-5*hightFactor);
-        top_center =  CGPointMake(center.x-moveDistance_1 + moveDistance_2, OFF-10*hightFactor);
+        top_left   =  CGPointMake(center.x-offset-moveDistance_1*2 + moveDistance_2, OFF);
+        top_center =  CGPointMake(center.x-moveDistance_1 + moveDistance_2, OFF);
         top_right  =  CGPointMake(center.x+offset+moveDistance_2, OFF);
         
     }else if(_animState == STATE3){
