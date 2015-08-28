@@ -27,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //********First version********
     self.min.text = [NSString stringWithFormat:@"%d",(int)self.slider.minimumValue] ;
     [self.slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     self.slider.hidden = YES;
@@ -43,7 +45,7 @@
     
     
     
-    //*******test version*******
+    //*******Second version*******
     _menu = [[Menu alloc]initWithFrame:CGRectMake(self.view.center.x-50, self.view.frame.size.height - 200, 100, 100)];
     [self.view addSubview:_menu];
     [self.showDedugPoints addTarget:self action:@selector(showDedug:) forControlEvents:UIControlEventValueChanged];

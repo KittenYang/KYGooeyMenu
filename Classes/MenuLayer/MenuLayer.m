@@ -95,7 +95,7 @@
         
     }
     
-    
+
     CGPoint right_top    =  CGPointMake(CGRectGetMaxX(real_rect), center.y-offset);
     CGPoint right_center =  CGPointMake(CGRectGetMaxX(real_rect), center.y);
     CGPoint right_bottom =  CGPointMake(CGRectGetMaxX(real_rect), center.y+offset);
