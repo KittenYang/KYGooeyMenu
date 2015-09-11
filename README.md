@@ -87,6 +87,8 @@ also,you can set the menu's icon:
 
 ##版本
 ##Version
+###v2.0.0 
+  This version is under tesing.So if you download this repo,you will see the test version(not finished) default.If you want to check the former version,just open the version1 code in the project.
 
 ###v1.0.5 
 
