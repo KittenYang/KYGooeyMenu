@@ -1,0 +1,8 @@
+BasedOnStyle: LLVM
+Language: Cpp
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 120
+AlignTrailingComments: true
+ObjCSpaceAfterProperty: true
+ObjCSpaceBeforeProtocolList: true
